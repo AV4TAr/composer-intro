@@ -1,0 +1,105 @@
+composer
+# qué es composer
+	- manejador de dependencias (gestionadas por proyecto)
+	- NO gestor de paquetes (no instalada nada globalmente)	
+
+# instalación
+	- PHP 5.3.2+ (RIP)
+		- ya deberíamos estar usando 5.4+ :)
+	- curl -sS https://getcomposer.org/installer | php
+	- SEGURIDAD!!! 
+		- trust installer?
+		- rvm hace lo mismo 1/2 pila igual
+
+# definición
+	- json con el siguiente formato
+	{
+	    "require": {
+	    	"php": ">=5.3.3",
+	        "dukt/vimeo": "1.0.*"
+	    }
+	}
+	- SEGURIDAD
+		- trust sources?
+
+# uso
+	- Instalar los paquetes y dependencias
+		$ php composer.phar install
+	- Usar los paquetes
+	<?php
+		require 'vendor/autoload.php';
+		//...
+	?>
+
+
+# composer.json
+	- require - dependencias
+		vendor / paquete : version
+
+		{
+		    "require": {
+		        "dukt/vimeo": "1.0.*"
+		    }
+		}
+	- dependencias para desarrollo
+		- ej: phpunit
+		    "require-dev" : {
+				"phpunit/phpunit": "3.7.*"
+			}
+		- php composer.phar install --dev
+	- version (semantic versioning MAJOR.MINOR.PATCH)
+		- exacta: 1.0.2
+		- rango:  >=1.0,<2.0
+		- comodín: 1.0.*
+		- siguiente release: ~1.2
+	- Solo versiones estables por defecto
+
+# update!
+	- directorio vendor
+
+	.
+	├── composer.json
+	├── composer.lock
+	├── composer.phar
+	└── vendor
+	    ├── autoload.php
+	    ├── bin
+	    ├── composer
+	    └── dukt
+
+# composer.lock
+	- commit!
+	- actualizar: php composer.phar update
+
+# ¿paquetes?
+	- http://packagist.org
+
+	- Propios respositorios
+		{
+			"repositories": [
+			    {
+			        "type": "composer",
+			        "url": "https://packages.zendframework.com/"
+			    }
+			],
+			"require": {
+			    "zendframework/zend-http": "2.*"
+			},
+		}
+		- Git, SVN, Mercurial, PEAR, Zip, Phar...
+
+# autoloading
+	- automatico PSR-0 (todos saben lo que es me imagino)
+
+	<?php
+	//composer.json: require - "dukt/vimeo": "1.0.*"
+	require_once 'vendor/autoload.php';
+	$Vimeo = new Dukt\Vimeo();
+
+	- classmap
+
+# tu propio paquete
+
+Links
+	- http://getcomposer.org/
+	- http://www.lornajane.net/posts/2013/psr-what
