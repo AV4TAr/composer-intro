@@ -6,6 +6,15 @@
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="./shower/themes/ribbon/styles/screen.css">
+	<style>
+
+		.slide mark.important {
+		    background: none repeat scroll 0 0 #CC0000;
+		    border-radius: 8px 8px 8px 8px;
+		    color: #FFFFFF;
+		    font-weight: normal;
+		}
+	</style>
 </head>
 <body class="list">
 	<!--
@@ -26,11 +35,56 @@
 
 	<section class="slide">
 		<div>
-			<p>Composer es un gestor de dependencias</p>
-			<p>Composer NO es un gestor de paquetes</p>
+			<h2>composer</h2>
+			<ul>
+				<li>Gestor de dependencias</li>
+				<ul>
+					<li class="next">por proyecto</li>
+					<li class="next">directorio <code>./vendor</code></li>
+				</ul>
+				<li class="next"><strong>NO</strong> es un gestor de paquetes</li>
+				<ul>
+					<li class="next">no instala globalmente</li>
+				</ul>
+			</ul>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>PHP 5.3.2</h2>
 		</div>
 	</section>
 
+	<section class="slide cover">
+		<div>
+			<h2>estemm....</h2>
+			<h2>ya deberíamos estar usando 5.4+ :)</h2>
+			<img alt="Marble of Doom" src="pictures/ups.jpg">
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>instalación</h2>
+			<pre>
+				<code>$ curl -sS https://getcomposer.org/installer | php</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>¿se dieron cuenta?</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>instalación</h2>
+			<pre>
+				<code>$ curl -sS https://getcomposer.org/installer <mark class="important">| php</mark></code>
+			</pre>
+			<p>Security issues!</p>
+			<p class="next note">rvm hace lo mismo, 1/2 pila!</p>
+		</div>
+	</section>
 	<section class="slide"><div>
 		<h2>Header</h2>
 		<p>Typewriter etsy messenger bag <a href="">fingerstache</a>, aesthetic vinyl semiotics twee <strong>DIY</strong> forage chillwave. Thundercats ennui messenger bag, <em>squid</em> carles chillwave shoreditch pickled cliche <b>letterpress</b>. DIY beard locavore <i>occupy</i> salvia, whatever single-origin <code>coffee</code> fanny pack 3 wolf moon typewriter gastropub kale chips. Ennui keffiyeh thundercats jean shorts biodiesel. Terry richardson, swag blog locavore umami vegan helvetica. Fingerstache kale chips.</p>
