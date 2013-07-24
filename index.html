@@ -6,13 +6,17 @@
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="./shower/themes/ribbon/styles/screen.css">
-	<style>
+	<style>s
 
 		.slide mark.important {
 		    background: none repeat scroll 0 0 #CC0000;
 		    border-radius: 8px 8px 8px 8px;
 		    color: #FFFFFF;
 		    font-weight: normal;
+		}
+
+		.slide.black {
+			color: #000000;
 		}
 	</style>
 </head>
@@ -25,11 +29,13 @@
 		<h1>introducción a Composer #PHP</h1>
 		<p>by <a href="https://twitter.com/AV4TAr">AV4TAr</a></p>
 	</header>
-	<section class="slide">
+	<section class="slide cover">
 		<div>
 			<h2>Composer</h2>
 			<h3>Dependency Manager for PHP</h3>
-			<h4>Brought you by @AV4TAr</h4>
+			<p class="note">Brought you by <a href="https://twitter.com/AV4TAr">@AV4TAr</a></p>
+			<p align="center"><img src="./images/composer_ini.png"></p>
+			
 		</div>
 	</section>
 
@@ -55,11 +61,11 @@
 		</div>
 	</section>
 
-	<section class="slide cover">
+	<section class="slide">
 		<div>
 			<h2>estemm....</h2>
-			<h2>ya deberíamos estar usando 5.4+ :)</h2>
-			<img alt="Marble of Doom" src="pictures/ups.jpg">
+			<h2>ya deberíamos estar usando PHP 5.4+</h2>
+			<p align="center"><img alt="" src="images/ejem.gif"></p>
 		</div>
 	</section>
 	<section class="slide">
@@ -85,6 +91,102 @@
 			<p class="next note">rvm hace lo mismo, 1/2 pila!</p>
 		</div>
 	</section>
+	<section class="slide">
+		<div>
+			<h2>composer.json</h2>
+			<pre>
+				<code>{</code>
+				<code>	"require": {</code>
+				<code>		"php": ">=5.3.3",</code>
+				<code>		"dukt/vimeo": "1.0.*"</code>
+				<code>	    }</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>uso</h2>
+			<pre>
+				<code>$ php composer.phar install</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide cover">
+		<div>
+			<p><img src="./images/composer_run_1.png"></p>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>usando...</h2>
+			<pre>
+				<code>&#60;?php </code>
+				<code> 	require 'vendor/autoload.php'; </code>
+				<code> 	$vimeo = new Dukt\Vimeo(); </code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide shout">
+		<div>
+			<h2>composer.json</h2>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>require :: dependencias</h2>
+			<ul>
+				<li>vendor / paquete : version</li>
+			</ul>
+			<pre>
+				<code>{</code>
+				<code>	"require": {</code>
+				<code>		"dukt/vimeo": "1.0.*"</code>
+				<code> 	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>require-dev :: desarrollo</h2>
+			<pre>
+				<code>{</code>
+				<code>	"require-dev": {</code>
+				<code>		"phpunit/phpunit": "3.7.*"</code>
+				<code> 	}</code>
+				<code>}</code>
+			</pre>
+			<pre>
+			<code>$ php composer.phar install <mark>--dev</mark></code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>versión :: major.minor.patch</h2>
+			<ul>
+				<li>vendor / paquete : version</li>
+				<li class="next">exacta → 1.0.2</li>
+				<li class="next">rango → >=1.0,<2.0</li>
+				<li class="next">comodín → 1.0.*</li>
+				<li class="next">siguiente release → ~1.2</li>
+			</ul>
+			<p class="note">solo versiones estables por defecto.</p>
+		</div>
+	</section>
+
+	<section class="slide black">
+		<div>
+
+			<p align="center"><img src="./images/tree.png"></p>
+		</div>
+	</section>
+
 	<section class="slide"><div>
 		<h2>Header</h2>
 		<p>Typewriter etsy messenger bag <a href="">fingerstache</a>, aesthetic vinyl semiotics twee <strong>DIY</strong> forage chillwave. Thundercats ennui messenger bag, <em>squid</em> carles chillwave shoreditch pickled cliche <b>letterpress</b>. DIY beard locavore <i>occupy</i> salvia, whatever single-origin <code>coffee</code> fanny pack 3 wolf moon typewriter gastropub kale chips. Ennui keffiyeh thundercats jean shorts biodiesel. Terry richardson, swag blog locavore umami vegan helvetica. Fingerstache kale chips.</p>
@@ -189,37 +291,43 @@
 		</table>
 		<p>Typewriter etsy messenger bag fingerstache.</p>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Numbered code listing</h2>
-		<pre>
-			<code>&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="s/screen.css"&gt;</code>
-			<code>    &lt;script src="j/jquery.js"&gt;&lt;/script&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Plain code listing</h2>
-		<pre><code>&lt;html lang="en"&gt;
-<mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark>
-    &lt;title&gt;Shower&lt;/title&gt;
-    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
-    &lt;link rel="stylesheet" href="s/screen.css"&gt;
-    &lt;script src="j/jquery.js"&gt;&lt;/script&gt;
-<mark>&lt;/head&gt;</mark></code></pre>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>
-			You Can<br>
-			Shout This Way
-		</h2>
-		<footer>
-			Typewriter etsy messenger bag fingerstache.
-		</footer>
-	</div></section>
+	<section class="slide">
+		<div>
+			<h2>Numbered code listing</h2>
+			<pre>
+				<code>&lt;html lang="en"&gt;</code>
+				<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
+				<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+				<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+				<code>    &lt;link rel="stylesheet" href="s/screen.css"&gt;</code>
+				<code>    &lt;script src="j/jquery.js"&gt;&lt;/script&gt;</code>
+				<code><mark>&lt;/head&gt;</mark></code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Plain code listing</h2>
+			<pre><code>&lt;html lang="en"&gt;
+			<mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark>
+			    &lt;title&gt;Shower&lt;/title&gt;
+			    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
+			    &lt;link rel="stylesheet" href="s/screen.css"&gt;
+			    &lt;script src="j/jquery.js"&gt;&lt;/script&gt;
+			<mark>&lt;/head&gt;</mark></code></pre>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>
+				You Can<br>
+				Shout This Way
+			</h2>
+			<footer>
+				Typewriter etsy messenger bag fingerstache.
+			</footer>
+		</div>
+	</section>
 	<section class="slide shout grow"><div>
 		<h2>Growing Shout</h2>
 	</div></section>
@@ -259,23 +367,27 @@
 		<h2>Timer</h2>
 		<p>Three seconds to go.</p>
 	</div></section>
-	<section class="slide"><div>
-		<h2>List navigation</h2>
-		<ol>
-			<li>Ennui keffiyeh thundercats</li>
-			<li class="next">Jean shorts biodiesel</li>
-			<li class="next">Terry richardson, swag blog</li>
-			<li class="next">Locavore umami vegan helvetica</li>
-			<li class="next">Fingerstache kale chips</li>
-		</ol>
-		<p class="next">Before they sold out master</p>
-	</div></section>
-	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+	<section class="slide">
+		<div>
+			<h2>List navigation</h2>
+			<ol>
+				<li>Ennui keffiyeh thundercats</li>
+				<li class="next">Jean shorts biodiesel</li>
+				<li class="next">Terry richardson, swag blog</li>
+				<li class="next">Locavore umami vegan helvetica</li>
+				<li class="next">Fingerstache kale chips</li>
+			</ol>
+			<p class="next">Before they sold out master</p>
+		</div>
+	</section>
+	<p class="badge">
+		<a href="https://github.com/shower/shower">Fork me on Github</a>
+	</p>
 	<!--
 		To hide progress bar from entire presentation
 		just remove “progress” element.
 		-->
-	<div class="progress"><div></div></div>
+	<div class="progress"><div>
 	<script src="./shower/shower.js"></script>
 	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
 </body>
