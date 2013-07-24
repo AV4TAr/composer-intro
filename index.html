@@ -33,7 +33,7 @@
 		<div>
 			<h2>Composer</h2>
 			<h3>Dependency Manager for PHP</h3>
-			<p class="note">Brought you by <a href="https://twitter.com/AV4TAr">@AV4TAr</a></p>
+			<p class="note">by <a href="https://twitter.com/AV4TAr">@AV4TAr</a></p>
 			<p align="center"><img src="./images/composer_ini.png"></p>
 			
 		</div>
@@ -110,6 +110,7 @@
 			<pre>
 				<code>$ php composer.phar install</code>
 			</pre>
+			<img width="600px" src="./images/load.gif">
 		</div>
 	</section>
 	<section class="slide cover">
@@ -238,12 +239,30 @@
 			<ul>
 				<li>automático PSR-0</li>
 			</ul>
-			<pre class="next">
+			<pre>
 				<code>&#60;?php</code>
 				<code>//composer.json: require - "dukt/vimeo": "1.0.*"</code>
 				<code>require_once 'vendor/autoload.php';</code>
 				<code>$Vimeo = new Dukt\Vimeo();</code>
 			</pre>
+		</div>
+	</section>
+<section class="slide">
+		<div>
+			<h2>autoloading</h2>
+			<ul>
+				<li>automático PSR-0</li>
+				<li>Classmap
+					<ul>
+						<li>genera <code>./vendor/composer/autoload_classmap.php</code></li>
+					</ul>
+				</li>
+				<li class="next">Files
+					<ul>
+						<li><code>require</code> de archivos</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</section>
 	<section id="Preguntas" class="slide cover">
@@ -260,6 +279,20 @@
 			
 		</div>
 	</section>
+	<section class="slide">
+		<div>
+			<h2>se viene..</h2>
+			<img src="./images/meetup.png">	
+			<p>22 y 23 de Noviembre - <a href="http://tech.meetup.uy">http://tech.meetup.uy</a></p>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>otras meetups</h2>
+			<p>AgileUY - automation - devOPS - Genexus - interaction design - .NetUY - js - PHP - MySQL - scala - ruby...</p>
+			<h2><a href="http://meetup.uy">http://meetup.uy</a></h2>
+		</div>
+	</section>
 
 	<p class="badge">
 		<a href="https://github.com/AV4TAr/composer-intro">Fork me on Github</a>
@@ -268,7 +301,7 @@
 		To hide progress bar from entire presentation
 		just remove “progress” element.
 		-->
-	<div class="progress"><div>
+	<!-- <div class="progress"><div> -->
 	<script src="./shower/shower.js"></script>
 	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
 </body>
